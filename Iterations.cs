@@ -35,7 +35,7 @@ namespace DotnetIteration
             var newWords = words.Select(word => word.ToUpper());
             return newWords;
 
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
         }
 
 
@@ -72,9 +72,10 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenSurvive(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            var evenNumbers = numbers.Where((number) => number % 2 == 0);
+            return evenNumbers;
+            // throw new System.NotImplementedException();
         }
-
 
         // 
         // 5) Complete the method OnlyTheEvenIndexedSurvive that accepts a
@@ -83,7 +84,10 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenIndexedSurvive(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            var evenIndexList = numbers.Where((numbers, index) => index % 2 == 0);
+            return evenIndexList;
+
+            // throw new System.NotImplementedException();
         }
 
 
@@ -102,6 +106,11 @@ namespace DotnetIteration
         // 
         public static IEnumerable<string> BestMovieOfTheYear(List<Movie> movies, int yearToMatch)
         {
+            var movieOfTheYear = movies
+            .Where(movie => movie.Score > 90 && movie.Year == yearToMatch)
+.Select(movie => movie.Name);
+            return movieOfTheYear;
+
             throw new System.NotImplementedException();
         }
 
@@ -112,7 +121,10 @@ namespace DotnetIteration
         // 
         public static bool EveryoneIsOdd(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            var listOfOdd = numbers.All(number => number % 2 != 0);
+            return listOfOdd;
+
+            // throw new System.NotImplementedException();
         }
 
 
@@ -123,7 +135,9 @@ namespace DotnetIteration
         // 
         public static string FindTheNeedle(List<string> sentences)
         {
-            throw new System.NotImplementedException();
+            var whereNeedle = sentences.Find(sentence => sentence.Contains("needle"));
+            return whereNeedle;
+            // throw new System.NotImplementedException();
         }
 
 
@@ -134,7 +148,13 @@ namespace DotnetIteration
         // 
         public static int FindTheNeedleIndex(List<string> sentences)
         {
-            throw new System.NotImplementedException();
+            var indexOfNeedle = sentences.FindIndex(sentence => sentence.Contains("needle"));
+            return indexOfNeedle;
+
+            // int index = myList.FindIndex(a => a.Contains("Tennis"));
+
+
+            // throw new System.NotImplementedException();
         }
 
 
@@ -145,7 +165,9 @@ namespace DotnetIteration
         // 
         public static bool SomeoneToLove(List<string> words)
         {
-            throw new System.NotImplementedException();
+            return words.Any(word => word.Length == 4);
+
+            // throw new System.NotImplementedException();
         }
     }
 }
