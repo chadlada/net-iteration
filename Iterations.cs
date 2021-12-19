@@ -32,8 +32,9 @@ namespace DotnetIteration
         //
         public static IEnumerable<string> Yelling(List<string> words)
         {
-            var newWords = words.Select(word => word.ToUpper());
-            return newWords;
+
+            var newWordsUpperCase = words.Select(word => word.ToUpper());
+            return newWordsUpperCase;
 
             // throw new System.NotImplementedException();
         }
@@ -46,10 +47,11 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> Double(List<int> numbers)
         {
-            var multiplyBy2 = numbers.Select(value => value * 2);
-            return multiplyBy2;
 
+            var newListDoubled = numbers.Select(number => number * 2);
+            return newListDoubled;
             // throw new System.NotImplementedException();
+
         }
 
 
@@ -61,7 +63,10 @@ namespace DotnetIteration
         // 
         public static IEnumerable<string> StringyIndexes(List<string> words)
         {
+            // return words.Select((word, index) => $"{word} is at index {index}");
+
             return words.Select((word, index) => $"{word} is at index {index}");
+
             // throw new System.NotImplementedException();
         }
 
@@ -72,8 +77,9 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenSurvive(List<int> numbers)
         {
-            var evenNumbers = numbers.Where((number) => number % 2 == 0);
-            return evenNumbers;
+            var evenNumberedList = numbers.Where((number) => number % 2 == 0);
+            return evenNumberedList;
+
             // throw new System.NotImplementedException();
         }
 
@@ -84,7 +90,7 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenIndexedSurvive(List<int> numbers)
         {
-            var evenIndexList = numbers.Where((numbers, index) => index % 2 == 0);
+            var evenIndexList = numbers.Where((number, index) => index % 2 == 0);
             return evenIndexList;
 
             // throw new System.NotImplementedException();
@@ -106,12 +112,12 @@ namespace DotnetIteration
         // 
         public static IEnumerable<string> BestMovieOfTheYear(List<Movie> movies, int yearToMatch)
         {
-            var movieOfTheYear = movies
+            var movieOfYearMoreThan90 = movies
             .Where(movie => movie.Score > 90 && movie.Year == yearToMatch)
-.Select(movie => movie.Name);
-            return movieOfTheYear;
+            .Select(movie => movie.Name);
+            return movieOfYearMoreThan90;
 
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
         }
 
 
@@ -121,8 +127,8 @@ namespace DotnetIteration
         // 
         public static bool EveryoneIsOdd(List<int> numbers)
         {
-            var listOfOdd = numbers.All(number => number % 2 != 0);
-            return listOfOdd;
+            var listOffOddNumbers = numbers.All(number => number % 2 != 0);
+            return listOffOddNumbers;
 
             // throw new System.NotImplementedException();
         }
@@ -135,8 +141,9 @@ namespace DotnetIteration
         // 
         public static string FindTheNeedle(List<string> sentences)
         {
-            var whereNeedle = sentences.Find(sentence => sentence.Contains("needle"));
-            return whereNeedle;
+            var wheresNeedle = sentences.Find(sentence => sentence.Contains("needle"));
+            return wheresNeedle;
+
             // throw new System.NotImplementedException();
         }
 
@@ -148,15 +155,11 @@ namespace DotnetIteration
         // 
         public static int FindTheNeedleIndex(List<string> sentences)
         {
-            var indexOfNeedle = sentences.FindIndex(sentence => sentence.Contains("needle"));
-            return indexOfNeedle;
-
-            // int index = myList.FindIndex(a => a.Contains("Tennis"));
-
+            var needleIndex = sentences.FindIndex(sentence => sentence.Contains("needle"));
+            return needleIndex;
 
             // throw new System.NotImplementedException();
         }
-
 
         // 
         // 10) Complete the method SomeoneToLove that accepts a list of
